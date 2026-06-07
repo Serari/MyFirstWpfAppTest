@@ -21,9 +21,12 @@ namespace WpfAppTest
             InitializeComponent();
         }
 
+        private static readonly string[] Items = ["ライチ☆光クラブ", "ヤマノススメ", "放課後さいころ倶楽部"];
+        private static readonly Random Rng = new();
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ResultLabel.Content = "ライチ☆光クラブ";
+            ResultLabel.Content = Items[Rng.Next(Items.Length)];
         }
     }
 }
