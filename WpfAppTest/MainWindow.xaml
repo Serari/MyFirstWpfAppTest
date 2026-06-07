@@ -7,11 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <!-- 画面を上下2分割する -->
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Button Grid.Row="0" Content="好きな漫画" Click="Button_Click"/>
-        <Label x:Name="ResultLabel" Grid.Row="1" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <!-- 上半分：ボタン。押すとViewModelのPickCommandが実行される -->
+        <Button Grid.Row="0" Content="好きな漫画" Command="{Binding PickCommand}"/>
+        <!-- 下半分：結果表示ラベル。ViewModelのResultTextにバインドされている -->
+        <Label Grid.Row="1" Content="{Binding ResultText}" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center"/>
     </Grid>
 </Window>
